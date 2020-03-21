@@ -13,7 +13,7 @@ const square = new Polygon(10, 10);
 const server = http.createServer((req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
-    res.end('Hello World!\n' + square.area);
+    res.end('Hello World!\n');
 });
 
 //監聽得到的 port 號開啟
