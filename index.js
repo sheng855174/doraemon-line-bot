@@ -1,7 +1,5 @@
 const var player = require('./Player.js');
 
-const inori = new Player('Inori', 16, 'girl', 'pink')
-
 //引用'http'模組
 const http = require('http');
 
