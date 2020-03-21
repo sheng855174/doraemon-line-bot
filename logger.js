@@ -1,4 +1,4 @@
-class Player {
+module.exports = class Player {
     constructor(fullName, age, gender, hairColor) {
         this.fullName = fullName
         this.age = age
