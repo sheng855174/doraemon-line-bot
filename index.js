@@ -1,4 +1,4 @@
-var logger = require('./logger.js');
+const var logger = require('./logger.js');
 
 
 //引用'http'模組
@@ -14,7 +14,7 @@ const port = process.env.PORT || 3000;
 const server = http.createServer((req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
-    res.end('Hello World!\n' + logger);
+    res.end('Hello World!\n' + logger.url);
 });
 
 //監聽得到的 port 號開啟
