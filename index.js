@@ -1,5 +1,6 @@
-const var logger = require('./logger.js');
+const var player = require('./Player.js');
 
+const inori = new Player('Inori', 16, 'girl', 'pink')
 
 //引用'http'模組
 const http = require('http');
@@ -14,7 +15,7 @@ const port = process.env.PORT || 3000;
 const server = http.createServer((req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
-    res.end('Hello World!\n' + logger.url);
+    res.end('Hello World!\n');
 });
 
 //監聽得到的 port 號開啟
