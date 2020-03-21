@@ -7,11 +7,13 @@ const http = require('http');
 //port 號會由 Heroku 給予，因此不再自行指定
 const port = process.env.PORT || 3000;
 
+const square = new Polygon(10, 10);
+
 //新增一個server並指定他的頁面資訊，內容為'Hello World!'
 const server = http.createServer((req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
-    res.end('Hello World!\n');
+    res.end('Hello World!\n' + square.area);
 });
 
 //監聽得到的 port 號開啟
