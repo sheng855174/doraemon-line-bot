@@ -1,25 +1,35 @@
-// 引用linebot SDK
-var linebot = require('linebot');
+const linebot = require('linebot');
+const express = require('express');
 
-// 用於辨識Line Channel的資訊
-var bot = linebot({
-  channelId: '1601315402',
-  channelSecret: '6af8e930dab9b3a977719185adc48a99',
-  channelAccessToken: 'E8M/Zgv4jKfyH/13Y/qcZ3YosAzkp9IRUFDRN0ZOYvKUVFLBrjqCAQzKruz6y2dvODQ57vf07Y+DlJJ4CZCHzToyhLm8dhPkmcz4aFNwFicKuHnDl2WGeNTA9id2jRVhr4Mhr2RyoP39f+7Wonbl0gdB04t89/1O/w1cDnyilFU='
+const bot = linebot({
+    channelId: '1601315402',
+    channelSecret: '6af8e930dab9b3a977719185adc48a99',
+    channelAccessToken: 'E8M/Zgv4jKfyH/13Y/qcZ3YosAzkp9IRUFDRN0ZOYvKUVFLBrjqCAQzKruz6y2dvODQ57vf07Y+DlJJ4CZCHzToyhLm8dhPkmcz4aFNwFicKuHnDl2WGeNTA9id2jRVhr4Mhr2RyoP39f+7Wonbl0gdB04t89/1O/w1cDnyilFU='
 });
 
-// 當有人傳送訊息給Bot時
-bot.on('message', function (event) {
-  // event.message.text是使用者傳給bot的訊息
-  // 使用event.reply(要回傳的訊息)方法可將訊息回傳給使用者
-  event.reply(event.message.text).then(function (data) {
-    // 當訊息成功回傳後的處理
-  }).catch(function (error) {
-    // 當訊息回傳失敗後的處理
-  });
+
+//這一段的程式是專門處理當有人傳送文字訊息給LineBot時，我們的處理回應
+bot.on('message', function(event) {
+    if (event.message.type = 'text') {
+        let msg = event.message.text;
+        //收到文字訊息時，直接把收到的訊息傳回去，這裏是 echo，就是你問什麼就回答什麼，簡單的對話
+        event.reply(msg).then(function(data) {
+            // 傳送訊息成功時，可在此寫程式碼
+            console.log(msg);
+        }).catch(function(error) {
+            // 傳送訊息失敗時，可在此寫程式碼
+            console.log('錯誤產生，錯誤碼：'+error);
+        });
+    }
 });
 
-// Bot所監聽的webhook路徑與port
-bot.listen('/linewebhook', 3000, function () {
-    console.log('[BOT已準備就緒]');
+const app = express();
+
+// bot.parser() 是 LINE Bot 的傳過來的資料，以及 JSON 解析
+const linebotParser = bot.parser();
+app.post('/linewebhook', linebotParser);
+
+const server = app.listen(process.env.PORT || 80, function() {
+    let port = server.address().port;
+    console.log('目前的port是', port);
 });
