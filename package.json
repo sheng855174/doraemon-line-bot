@@ -16,5 +16,9 @@
 	"bugs": {
 		"url": "https://github.com/sheng855174/doraemon-line-bot/issues"
 	},
-	"homepage": "https://github.com/sheng855174/doraemon-line-bot#readme"
+	"homepage": "https://github.com/sheng855174/doraemon-line-bot#readme",
+	"dependencies": {
+		"express": "^4.17.1",
+		"linebot": "^1.5.3"
+	}
 }
