@@ -11,14 +11,16 @@ const bot = linebot({
 
 bot.on('message', function(event) {//這一段的程式是專門處理當有人傳送文字訊息給LineBot時，我們的處理回應
 	if (event.message.type = 'text') {//收到文字訊息時，直接把收到的訊息傳回去，這裏是 echo，就是你問什麼就回答什麼，簡單的對話
-		let msg = event.message.text;
-		/*
+		let msg = event.message.text + "\r\n"
+		+ "userid : " + event.source.userId + "\r\n"
+		+ "groupid : " + event.source.group_id;
+		
 		event.reply(msg).then(function(data) {// 傳送訊息成功時，可在此寫程式碼
 			console.log(msg);
 		}).catch(function(error) {// 傳送訊息失敗時，可在此寫程式碼
 			console.log('錯誤產生，錯誤碼：'+error);
 		});
-		*/
+		
 	}
 });
 
