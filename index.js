@@ -13,23 +13,16 @@ bot.on('message', function(event) {//這一段的程式是專門處理當有人�
 	let userId = event.source.userId;
 	let groupId = event.source.group_id;
 	let type = event.source.type;
-	
-	let profile = bot.getProfile(userId);
-	
+
 	let msg = event.message.text;
 	let txt = msg + "\r\n"
 		+ "userId : " + userId + "\r\n"
 		+ "groupid : " + groupId + "\r\n"
-		+ "type ： " + type + "\r\n"
-		+ profile.displayName + "\r\n";
+		+ "type ： " + type + "\r\n";
 
-	if (event.message.type = 'text') {//收到文字訊息時，直接把收到的訊息傳回去，這裏是 echo，就是你問什麼就回答什麼，簡單的對話
+	if (event.message.type = 'text') {//收到文字訊息時，直接把收到的訊息傳回去
 		if(userId == "U1062a218fd1dc5967b90f4ab74aa8e15" && msg == "talk"){
-			event.reply(txt).then(function(data) {// 傳送訊息成功時，可在此寫程式碼
-				console.log(txt);
-			}).catch(function(error) {// 傳送訊息失敗時，可在此寫程式碼
-				console.log('錯誤產生，錯誤碼：' + error);
-			});
+			event.reply(txt);
 		}
 	}
 });
