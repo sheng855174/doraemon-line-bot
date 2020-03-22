@@ -15,7 +15,7 @@ bot.on('message', function(event) {//這一段的程式是專門處理當有人�
 	let groupId = event.source.group_id;
 	let type = event.source.type;
 	let msg = event.message.text;
-	let txt = meg + "\r\n"
+	let txt = msg + "\r\n"
 		+ "userId : " + userId + "\r\n"
 		+ "groupid : " + groupId + "\r\n"
 		+ "type ： " + type + "\n";
