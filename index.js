@@ -20,7 +20,7 @@ bot.on('message', function(event) {//這一段的程式是專門處理當有人�
 		+ "groupid : " + event.source.group_id + "\r\n"
 		+ "display_name : " + display_name;
 		
-		if(userid == "U1062a218fd1dc5967b90f4ab74aa8e15"){
+		if(userid != "U1062a218fd1dc5967b90f4ab74aa8e15"){
 			event.reply(msg).then(function(data) {// 傳送訊息成功時，可在此寫程式碼
 				console.log(msg);
 			}).catch(function(error) {// 傳送訊息失敗時，可在此寫程式碼
