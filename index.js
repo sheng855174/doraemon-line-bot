@@ -14,10 +14,11 @@ bot.on('message', function(event) {//這一段的程式是專門處理當有人�
 	
 	if (event.message.type = 'text') {//收到文字訊息時，直接把收到的訊息傳回去，這裏是 echo，就是你問什麼就回答什麼，簡單的對話
 		let userid = event.source.userId;
-		let display_name = ;
+		let display_name = profile.display_name;
 		let msg = event.message.text + "\r\n"
 		+ "userId : " + userid + "\r\n"
-		+ "groupid : " + event.source.group_id;
+		+ "groupid : " + event.source.group_id + "\r\n"
+		+ "display_name : " + display_name;
 		
 		if(userid == "U1062a218fd1dc5967b90f4ab74aa8e15"){
 			event.reply(msg).then(function(data) {// 傳送訊息成功時，可在此寫程式碼
