@@ -10,7 +10,7 @@ const bot = linebot({
 
 
 bot.on('message', function(event) {//這一段的程式是專門處理當有人傳送文字訊息給LineBot時，我們的處理回應
-	let profile = bot.getProfile(source.userId);
+	//let profile = bot.getProfile(source.userId);
 	
 	if (event.message.type = 'text') {//收到文字訊息時，直接把收到的訊息傳回去，這裏是 echo，就是你問什麼就回答什麼，簡單的對話
 		let userId = event.source.userId;
