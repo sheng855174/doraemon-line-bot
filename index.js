@@ -15,7 +15,7 @@ bot.on('message', function(event) {//這一段的程式是專門處理當有人�
 	let msg = event.message.text;
 	let date = new Date().toLocaleString('zh-TW', {timeZone: 'Asia/Taipei'});
 	
-	if(userId == "U1062a218fd1dc5967b90f4ab74aa8e15" && msg == 'talk'){
+	if(msg == 'talk'){
 		event.source.profile().then(function (profile) {
 			let txt = msg + "\r\n"
 				+ "userId : " + userId + "\r\n"
