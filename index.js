@@ -30,7 +30,7 @@ bot.on('message', function(event) {//這一段的程式是專門處理當有人�
 					+ "message type ： " + msg_type + "\r\n"
 					+ "你的名字是 : " + profile.displayName + "\r\n"
 					+ "你的照片 : " + profile.pictureUrl + "\r\n"
-					+ year + "-" + month + "-" + day + " " + hours + ":" + minutes + ":" + seconds "\r\n"+;
+					+ year + "-" + month + "-" + day + " " + hours + ":" + minutes + ":" + seconds + "\r\n";
 				event.reply(txt);
 			});
 		}
