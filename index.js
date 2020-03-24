@@ -16,7 +16,7 @@ bot.on('message', function(event) {//這一段的程式是專門處理當有人�
 	let date = new Date();
 	let year = date.getFullYear();
 	let month = date.getMonth();
-	let day = date.getDay;
+	let day = date.getDay();
 	let hours = date.getHours();
 	let minutes = date.getMinutes();
 	let seconds = date.getSeconds();
