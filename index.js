@@ -10,21 +10,25 @@ const bot = linebot({
 bot.on('message', function(event) {//這一段的程式是專門處理當有人傳送文字訊息給LineBot時，我們的處理回應
 	
 	let userId = event.source.userId;
-	let groupId = event.source.group_id;
 	let type = event.source.type;
 	let msg_type = event.message.type;
 	let msg = event.message.text;
+	let date = new Date().getTime();
+	let year = date.getFullYear();
+	let hours = date.getHours();
+	let minutes = date.getMinutes();
+	let seconds = date.getSeconds();
 	
 	if (event.message.type = 'text') {//收到文字訊息時，直接把收到的訊息傳回去
 		if(userId == "U1062a218fd1dc5967b90f4ab74aa8e15" && msg == "talk"){
 			event.source.profile().then(function (profile) {
 				let txt = msg + "\r\n"
 					+ "userId : " + userId + "\r\n"
-					+ "groupid : " + groupId + "\r\n"
 					+ "spaces type ： " + type + "\r\n"
 					+ "message type ： " + msg_type + "\r\n"
 					+ "你的名字是 : " + profile.displayName + "\r\n"
-					+ "你的照片 : " + profile.pictureUrl + "\r\n";
+					+ "你的照片 : " + profile.pictureUrl + "\r\n"
+					+ year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds "\r\n"+;
 				event.reply(txt);
 			});
 		}
