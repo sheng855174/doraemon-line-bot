@@ -14,24 +14,21 @@ bot.on('message', function(event) {//這一段的程式是專門處理當有人�
 	let type = event.source.type;
 	let msg_type = event.message.type;
 	let msg = event.message.text;
-	let profile = event.source.profile();
-	let txt = msg + "\r\n"
-		+ "userId : " + userId + "\r\n"
-		+ "groupid : " + groupId + "\r\n"
-		+ "spaces type ： " + type + "\r\n"
-		+ "message type ： " + msg_type + "\r\n"
-		+ profile + "\r\n"
-		+ profile.displayName + "\r\n"
-		+ profile.userId + "\r\n"
-		+ profile.pictureUrl + "\r\n";
-
-
+	
 	if (event.message.type = 'text') {//收到文字訊息時，直接把收到的訊息傳回去
 		if(userId == "U1062a218fd1dc5967b90f4ab74aa8e15" && msg == "talk"){
 			event.source.profile().then(function (profile) {
-				event.reply('Hello ' + profile.displayName);
+				let txt = msg + "\r\n"
+					+ "userId : " + userId + "\r\n"
+					+ "groupid : " + groupId + "\r\n"
+					+ "spaces type ： " + type + "\r\n"
+					+ "message type ： " + msg_type + "\r\n"
+					+ profile + "\r\n"
+					+ profile.displayName + "\r\n"
+					+ profile.userId + "\r\n"
+					+ profile.pictureUrl + "\r\n";
+				event.reply(txt);
 			});
-			//event.reply(txt);
 		}
 	}
 });
