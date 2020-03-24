@@ -15,6 +15,8 @@ bot.on('message', function(event) {//這一段的程式是專門處理當有人�
 	let msg = event.message.text;
 	let date = new Date().getTime();
 	let year = date.getFullYear();
+	let month = date.getMonth();
+	let day = date.getDay;
 	let hours = date.getHours();
 	let minutes = date.getMinutes();
 	let seconds = date.getSeconds();
@@ -28,7 +30,7 @@ bot.on('message', function(event) {//這一段的程式是專門處理當有人�
 					+ "message type ： " + msg_type + "\r\n"
 					+ "你的名字是 : " + profile.displayName + "\r\n"
 					+ "你的照片 : " + profile.pictureUrl + "\r\n"
-					+ year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds "\r\n"+;
+					+ year + "-" + month + "-" + day + " " + hours + ":" + minutes + ":" + seconds "\r\n"+;
 				event.reply(txt);
 			});
 		}
