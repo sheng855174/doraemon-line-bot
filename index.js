@@ -14,12 +14,6 @@ bot.on('message', function(event) {//這一段的程式是專門處理當有人�
 	let msg_type = event.message.type;
 	let msg = event.message.text;
 	let date = new Date();
-	let year = date.getFullYear();
-	let month = date.getMonth();
-	let day = date.getDay();
-	let hours = date.getHours();
-	let minutes = date.getMinutes();
-	let seconds = date.getSeconds();
 	
 	if (event.message.type = 'text') {//收到文字訊息時，直接把收到的訊息傳回去
 		if(userId == "U1062a218fd1dc5967b90f4ab74aa8e15" && msg == "talk"){
@@ -30,7 +24,7 @@ bot.on('message', function(event) {//這一段的程式是專門處理當有人�
 					+ "message type ： " + msg_type + "\r\n"
 					+ "你的名字是 : " + profile.displayName + "\r\n"
 					+ "你的照片 : " + profile.pictureUrl + "\r\n"
-					+ year + "-" + month + "-" + day + " " + hours + ":" + minutes + ":" + seconds + "\r\n";
+					+ date + "\r\n";
 				event.reply(txt);
 			});
 		}
