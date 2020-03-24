@@ -13,7 +13,7 @@ bot.on('message', function(event) {//這一段的程式是專門處理當有人�
 	let type = event.source.type;
 	let msg_type = event.message.type;
 	let msg = event.message.text;
-	let date = new Date().now();
+	let date = new Date();
 	let year = date.getFullYear();
 	let month = date.getMonth();
 	let day = date.getDay;
