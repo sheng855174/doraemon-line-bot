@@ -12,16 +12,23 @@ bot.on('message', function(event) {//這一段的程式是專門處理當有人�
 	let userId = event.source.userId;
 	let groupId = event.source.group_id;
 	let type = event.source.type;
+	let msg_type = event.message.type;
 	let msg = event.message.text;
 	let profile = event.source.profile();
+	
+	bot.getUserProfile(event.source.userId)
+
+	
 	let txt = msg + "\r\n"
 		+ "userId : " + userId + "\r\n"
 		+ "groupid : " + groupId + "\r\n"
-		+ "type ： " + type + "\r\n"
+		+ "spaces type ： " + type + "\r\n"
+		+ "message type ： " + msg_type + "\r\n"
 		+ profile + "\r\n"
 		+ profile.displayName + "\r\n"
 		+ profile.userId + "\r\n"
-		+ profile.pictureUrl + "\r\n";
+		+ profile.pictureUrl + "\r\n"
+		+ bot.getUserProfile(event.source.userId) + "\r\n";
 
 
 	if (event.message.type = 'text') {//收到文字訊息時，直接把收到的訊息傳回去
