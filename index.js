@@ -15,11 +15,10 @@ bot.on('message', function(event) {
 	let msg_type = event.message.type;
 	let msg = event.message.text;
 	let date = new Date().toLocaleString('zh-TW', {timeZone: 'Asia/Taipei'});
-	const userProfile = new UserProfile(event);
 	
 	if(msg == 'talk'){
 		event.source.profile().then(function (profile) {
-			userProfile(userId, type, msg_type, profile.displayName, profile.pictureUrl, msg);
+			var userProfile = new UserProfile(userId, type, msg_type, profile.displayName, profile.pictureUrl, msg);
 			let txt = msg + "\r\n"
 				+ userProfile.toString();
 				+ date + "\r\n";
