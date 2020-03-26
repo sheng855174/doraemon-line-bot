@@ -1,5 +1,6 @@
 const linebot = require('linebot');
 const express = require('express');
+const userProfile = require("./UserProfileAPI.js");
 
 const bot = linebot({
 	channelId: '1601315402',
@@ -14,6 +15,7 @@ bot.on('message', function(event) {//這一段的程式是專門處理當有人�
 	let msg_type = event.message.type;
 	let msg = event.message.text;
 	let date = new Date().toLocaleString('zh-TW', {timeZone: 'Asia/Taipei'});
+	const inori = new Player('Inori', 16, 'girl', 'pink');
 	
 	if(msg == 'talk'){
 		event.source.profile().then(function (profile) {
@@ -23,7 +25,8 @@ bot.on('message', function(event) {//這一段的程式是專門處理當有人�
 				+ "message type ： " + msg_type + "\r\n"
 				+ "你的名字是 : " + profile.displayName + "\r\n"
 				+ "你的照片 : " + profile.pictureUrl + "\r\n"
-				+ date + "\r\n";
+				+ date + "\r\n"
+				+ inori.toString() + "\r\n";
 			event.reply(txt);
 		});
 	}
