@@ -8,12 +8,12 @@ module.exports = class UserProfile {
 		this.message = message;
 	}
 	toString() {
-		return "message : " + this.msg + "\r\n"
-		+ "userId : " + this.userId + "\r\n"
-		+ "spaces type ： " + this.type + "\r\n"
-		+ "message type ： " + this.msg_type + "\r\n"
-		+ "displayName : " + this.profile.displayName + "\r\n"
-		+ "pictureUrl : " + this.profile.pictureUrl + "\r\n";
+		return "message : "    + this.message       + "\r\n"
+		+ "userId : "          + this.userId        + "\r\n"
+		+ "spaces type ： "    + this.type          + "\r\n"
+		+ "message type ： "   + this.msg_type      + "\r\n"
+		+ "displayName : "     + this.displayName   + "\r\n"
+		+ "pictureUrl : "      + this.pictureUrl    + "\r\n";
 	}
 };
 
