@@ -19,9 +19,7 @@ bot.on('message', function(event) {
 	if(msg == 'talk'){
 		event.source.profile().then(function (profile) {
 			var userProfile = new UserProfile(userId, type, msg_type, profile.displayName, profile.pictureUrl, msg);
-			let txt = msg + "\r\n"
-				+ userProfile.toString();
-				+ date + "\r\n";
+			let txt = userProfile.toString() + date + "\r\n";
 			event.reply(txt);
 		});
 	}
