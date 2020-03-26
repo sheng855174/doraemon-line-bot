@@ -15,7 +15,7 @@ bot.on('message', function(event) {//這一段的程式是專門處理當有人�
 	let msg_type = event.message.type;
 	let msg = event.message.text;
 	let date = new Date().toLocaleString('zh-TW', {timeZone: 'Asia/Taipei'});
-	const inori = new userProfile('Inori', 16, 'girl', 'pink');
+	const inori = new userProfile(event);
 	
 	if(msg == 'talk'){
 		event.source.profile().then(function (profile) {
