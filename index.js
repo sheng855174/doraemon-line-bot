@@ -21,7 +21,7 @@ bot.on('message', function(event) {
 		event.source.profile().then(function (profile) {
 			userProfile(userId, type, msg_type, profile.displayName, profile.pictureUrl, msg);
 			let txt = msg + "\r\n"
-				+ 
+				+ userProfile.toString();
 				+ date + "\r\n";
 			event.reply(txt);
 		});
